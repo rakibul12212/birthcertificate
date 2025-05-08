@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <nav className="bg-black shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-10">
       <Link href="/" className="text-2xl font-bold text-white">
-        Survey.
+        Identity.
       </Link>
 
       <div className="hidden md:flex space-x-6">

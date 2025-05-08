@@ -16,6 +16,7 @@ const Form = () => {
     gender: "",
     fatherName: "",
     motherName: "",
+    nationality: "",
     sign: "",
     term: false,
   });
@@ -177,6 +178,20 @@ const Form = () => {
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
+        {/* nationality */}
+        <div className="flex flex-col">
+          <label htmlFor="nationality" className="mb-1 text-sm font-medium">
+            Nationality
+          </label>
+          <input
+            name="nationality"
+            value={formData.nationality}
+            onChange={handleChange}
+            id="nationality"
+            placeholder="Enter your nationality"
+            className="border border-gray-300 outline-none rounded p-2"
+          />
+        </div>
         {/* gender */}
         <div className="flex flex-col">
           <label htmlFor="status" className="mb-1 text-sm font-medium">
@@ -197,6 +212,7 @@ const Form = () => {
             <option value="Other">Other</option>
           </select>
         </div>
+
         {/* sign */}
         <div className="col-span-1 md:col-span-2 flex flex-col">
           <label htmlFor="sign" className="mb-1 text-sm font-medium">

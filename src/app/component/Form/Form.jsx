@@ -8,13 +8,15 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    number: "",
-    location: "",
-    date: "",
-    status: "",
-    company: "",
-    jobTitle: "",
-    notes: "",
+    regNum: "",
+    presentAddress: "",
+    permanentAddress: "",
+    dateR: "",
+    dob: "",
+    gender: "",
+    fatherName: "",
+    motherName: "",
+    sign: "",
     term: false,
   });
 
@@ -57,7 +59,48 @@ const Form = () => {
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
-
+        {/* Date of Birth */}
+        <div className="flex flex-col">
+          <label htmlFor="dob" className="mb-1 text-sm font-medium">
+            Date Of Birth
+          </label>
+          <input
+            name="dob"
+            type="date"
+            value={formData.dob}
+            onChange={handleChange}
+            id="dob"
+            className="border border-gray-300 outline-none rounded p-2"
+          />
+        </div>
+        {/* fatherName */}
+        <div className="flex flex-col">
+          <label htmlFor="fatherName" className="mb-1 text-sm font-medium">
+            Father's Name
+          </label>
+          <input
+            name="fatherName"
+            value={formData.fatherName}
+            onChange={handleChange}
+            id="fatherName"
+            placeholder="Enter Your Father's Name "
+            className="border border-gray-300 outline-none rounded p-2"
+          />
+        </div>
+        {/* motherName */}
+        <div className="flex flex-col">
+          <label htmlFor="motherName" className="mb-1 text-sm font-medium">
+            Mother's Name
+          </label>
+          <input
+            name="motherName"
+            value={formData.motherName}
+            onChange={handleChange}
+            id="motherName"
+            placeholder="Enter Your Mother's Name"
+            className="border border-gray-300 outline-none rounded p-2"
+          />
+        </div>
         {/* Email */}
         <div className="flex flex-col">
           <label htmlFor="email" className="mb-1 text-sm font-medium">
@@ -69,124 +112,106 @@ const Form = () => {
             value={formData.email}
             onChange={handleChange}
             id="email"
-            placeholder="Enter your email"
+            placeholder="Enter Your Email"
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
-
-        {/* Contact Number */}
+        {/* regNum */}
         <div className="flex flex-col">
-          <label htmlFor="number" className="mb-1 text-sm font-medium">
-            Contact Number
+          <label htmlFor="regNum" className="mb-1 text-sm font-medium">
+            Registration Number
           </label>
           <input
-            name="number"
-            type="tel"
-            value={formData.number}
+            name="regNum"
+            type="number"
+            value={formData.regNum}
             onChange={handleChange}
-            id="number"
-            placeholder="Enter your number"
+            id="regNum"
+            placeholder="Enter your Registration Number"
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
 
-        {/* Location */}
+        {/* parmanent */}
         <div className="flex flex-col">
-          <label htmlFor="location" className="mb-1 text-sm font-medium">
-            Location
+          <label htmlFor="presentAddress" className="mb-1 text-sm font-medium">
+            Present Address
           </label>
           <input
-            name="location"
-            value={formData.location}
+            name="presentAddress"
+            value={formData.presentAddress}
             onChange={handleChange}
-            id="location"
-            placeholder="Enter your location"
+            id="presentAddress"
+            placeholder="Enter your presentAddress"
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
-
-        {/* Date of Birth */}
+        {/* permanentAddress */}
         <div className="flex flex-col">
-          <label htmlFor="date" className="mb-1 text-sm font-medium">
-            Date Of Birth
+          <label
+            htmlFor="permanentAddress"
+            className="mb-1 text-sm font-medium"
+          >
+            Permanent Address
           </label>
           <input
-            name="date"
+            name="permanentAddress"
+            value={formData.permanentAddress}
+            onChange={handleChange}
+            id="permanentAddress"
+            placeholder="Enter your permanentAddress"
+            className="border border-gray-300 outline-none rounded p-2"
+          />
+        </div>
+        {/* Date of Reg */}
+        <div className="flex flex-col">
+          <label htmlFor="dateR" className="mb-1 text-sm font-medium">
+            Date Of Registration
+          </label>
+          <input
+            name="dateR"
             type="date"
-            value={formData.date}
+            value={formData.dateR}
             onChange={handleChange}
-            id="date"
+            id="dateR"
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
-
-        {/* Marital Status */}
+        {/* gender */}
         <div className="flex flex-col">
           <label htmlFor="status" className="mb-1 text-sm font-medium">
-            Marital Status
+            Gender
           </label>
           <select
-            name="status"
-            value={formData.status}
+            name="gender"
+            value={formData.gender}
             onChange={handleChange}
-            id="status"
+            id="gender"
             className="border border-gray-300 outline-none rounded p-2"
           >
             <option value="" disabled>
-              Select a status
+              Select agender
             </option>
-            <option value="Married">Married</option>
-            <option value="Single">Single</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
             <option value="Other">Other</option>
           </select>
         </div>
-
-        {/* Company */}
-        <div className="flex flex-col">
-          <label htmlFor="company" className="mb-1 text-sm font-medium">
-            Company Name
-          </label>
-          <input
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            id="company"
-            placeholder="Enter Company name"
-            className="border border-gray-300 outline-none rounded p-2"
-          />
-        </div>
-
-        {/* Job Title */}
-        <div className="flex flex-col">
-          <label htmlFor="jobTitle" className="mb-1 text-sm font-medium">
-            Job Title
-          </label>
-          <input
-            name="jobTitle"
-            value={formData.jobTitle}
-            onChange={handleChange}
-            id="jobTitle"
-            placeholder="Enter job title"
-            className="border border-gray-300 outline-none rounded p-2"
-          />
-        </div>
-
-        {/* Notes */}
+        {/* sign */}
         <div className="col-span-1 md:col-span-2 flex flex-col">
-          <label htmlFor="notes" className="mb-1 text-sm font-medium">
-            Additional Notes
+          <label htmlFor="sign" className="mb-1 text-sm font-medium">
+            Signature
           </label>
           <textarea
-            name="notes"
-            value={formData.notes}
+            name="sign"
+            value={formData.sign}
             onChange={handleChange}
-            id="notes"
+            id="sign"
             rows={4}
             placeholder="Write something..."
             className="border border-gray-300 outline-none rounded p-2"
           />
         </div>
-
         {/* Terms */}
         <div className="flex items-start md:items-center mt-2">
           <input
@@ -201,7 +226,6 @@ const Form = () => {
             I agree to the terms and conditions
           </label>
         </div>
-
         {/* Submit Button */}
         <div className="flex justify-start md:justify-end">
           <button

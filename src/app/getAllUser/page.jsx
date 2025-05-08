@@ -23,73 +23,104 @@ const GetAllUser = () => {
 
   return (
     <div>
-      <div className="flex justify-center pt-10">
+      <div className="flex justify-center pt-10 px-4 sm:px-6 lg:px-8">
         <p className="text-xl font-semibold border-l-2 ps-3 inline-block">
-          All User Details
+          Show All Certificate
         </p>
       </div>
 
-      <div className="w-full py-10 px-4">
+      <div className="w-full py-10 px-4 sm:px-6 lg:px-8">
         {userList.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
             {userList.map((user, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-lg shadow-md p-6 w-full"
+                className="bg-white shadow-lg p-6 sm:p-8 lg:p-10 border rounded"
               >
-                <div className="bg-white shadow-md rounded-md p-6">
-                  <p className="text-xl font-semibold text-left pb-3 border-b border-gray-200">
-                    Details
+                <div className="text-center py-4 sm:py-6">
+                  <p className="text-xl sm:text-2xl font-semibold">
+                    People's Republic of Bangladesh
                   </p>
-                  <p>
-                    <span className="font-semibold">Name: </span>
-                    {user.name}
+                  <p className="text-base sm:text-lg py-1 sm:py-2">
+                    Office of Registrar of Birth Certificate
                   </p>
-                  <p>
-                    <span className="font-semibold">Email: </span>
-                    {user.email}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Phone: </span>
-                    {user.number}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Location: </span>
-                    {user.location}
-                  </p>
-                  <p>
-                    <span className="font-semibold">DOB: </span>
-                    {user.date}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Status: </span>
-                    {user.status}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Company Name: </span>
-                    {user.company}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Job Title: </span>
-                    {user.jobTitle}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Note: </span>
-                    {user.notes}
+                  <p className="text-sm sm:text-md">X Union Parishad</p>
+                </div>
+
+                <div className="my-6 sm:my-8 text-center">
+                  <p className="text-xl sm:text-2xl font-bold">
+                    Birth Certificate
                   </p>
                 </div>
-                <div className="flex items-center gap-x-5 pt-4">
+
+                <p className="text-right text-sm sm:text-base py-2">
+                  <span className="font-semibold">Date:</span>
+                  <span className="">{user.dateR}</span>
+                </p>
+
+                <div className="flex justify-between mb-2 text-sm sm:text-base">
+                  <p>
+                    <span className="font-semibold">Register No:</span>
+
+                    {index + 1}
+                  </p>
+                </div>
+
+                <div className="space-y-3 text-sm sm:text-base">
+                  <p>
+                    <span className="font-semibold">
+                      Birth Registration No:
+                    </span>
+                    <span className="ms-3">
+                      {user.regNum}
+                    </span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Name:</span>
+                    <span className="ms-3">{user.name}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Gender:</span>
+                    <span className="ms-3">{user.gender}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Date of Birth:</span>
+                    <span className="ms-3">{user.dob}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Father's Name:</span>
+                    <span className="ms-3">{user.fatherName}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Mother's Name:</span>
+                    <span className="ms-3">{user.motherName}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Present Address:</span>
+                    <span className="ms-3">{user.presentAddress}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Permanent Address:</span>
+                    <span className="ms-3">{user.permanentAddress}</span>
+                  </p>
+                  <p>
+                    <span className="font-semibold">Signature:</span>
+                    <span className="ms-3">{user.sign}</span>
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 pt-6">
                   <button
-                    className="border px-3 py-1 rounded-md shadow-md"
+                    className="border px-3 py-1 rounded-md shadow-sm"
                     onClick={() => deleteUser(index)}
                   >
-                    <MdDelete size={24} className="hover:text-red-500" />
+                    <MdDelete size={20} className="hover:text-red-500" />
                   </button>
                   <button
-                    className="border px-3 py-1 rounded-md shadow-md"
+                    className="border px-3 py-1 rounded-md shadow-sm"
                     onClick={() => editUser(index)}
                   >
-                    <FaRegEdit size={24} className="hover:text-gray-600" />
+                    <FaRegEdit size={20} className="hover:text-gray-600" />
                   </button>
                 </div>
               </div>

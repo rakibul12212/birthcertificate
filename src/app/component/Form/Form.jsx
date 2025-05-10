@@ -78,7 +78,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    debugger;
     if (validateForm()) {
       const rawData = localStorage.getItem("formData") || "[]";
       const existingData = JSON.parse(rawData);

@@ -37,8 +37,11 @@ const Header = () => {
 
       {/* Mobile Links */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 md:hidden">
-          <Link href="/" className="text-gray-600 hover:text-blue-600">
+        <div className="absolute top-16 left-0 w-full h-screen bg-white shadow-md flex flex-col items-left  space-y-6 py-4 px-5 md:hidden">
+          <Link
+            href="getAllUser/"
+            className="text-gray-600 hover:text-blue-600"
+          >
             All User
           </Link>
           <Link
